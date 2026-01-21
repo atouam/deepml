@@ -1,0 +1,23 @@
+[project]
+name = "deepml"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "deepml-cli",
+    "numpy>=2.4.1",
+    "tinygrad>=0.12.0",
+    "torch>=2.10.0",
+]
+
+[tool.uv.sources]
+deepml-cli = { git = "https://github.com/atouam/deepml-cli" }
+torch = [
+  { index = "pytorch-cu128" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
